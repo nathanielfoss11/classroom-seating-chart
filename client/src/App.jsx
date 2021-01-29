@@ -21,9 +21,6 @@ class App extends React.Component {
             <br />
             <br />
             <Row>
-              <Toolbar />
-            </Row>
-            <Row>
               <ClassroomLayout />
             </Row>
           </Col>
