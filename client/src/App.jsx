@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ClassroomLayout from './components/ClassroomLayout.jsx';
-import Toolbar from  './components/Toolbar.jsx';
 
 class App extends React.Component {
   constructor() {
