@@ -1,39 +1,35 @@
-import React from 'react'
+import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import { BiRectangle } from 'react-icons/bi';
 import AllDesks from './AllDesks.jsx';
-
 
 class ClassroomLayout extends React.Component {
   constructor() {
     super();
     this.state = {
-      count: 0,
-      desks: []
+      desks: [],
+      name: '',
+      rating: 0
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(e) {
-    let newDesk= [];
-    let count = e.target.value;
-    this.setState({count: count})
-    if(this.state.desks.length > count) {
-      let desks = this.state.desks
-      desks = desks.pop()
-      this.setState({desks: desks})
-    } else {
-      let desks = this.state.desks
-      desks.push(newDesk)
-      console.log(desks)
-      this.setState({desks: desks})
-    }
+    let name = e.target.name
+    this.setState({[name]: e.target.value})
   }
 
   handleClick(e) {
     e.preventDefault();
-    this.setState({count: 0})
+    console.log(this.state)
+    let obj = {
+      name: this.state.name,
+      rating: this.state.rating
+    }
+    let desks = this.state.desks;
+    desks.push(obj);
+    this.setState({desks: desks})
+    this.setState({name: ''})
   }
 
   render() {
@@ -44,10 +40,20 @@ class ClassroomLayout extends React.Component {
               <h3>Toolbar</h3>
             </Col>
             <Col>
-              Seats
-              <input step={1} value={this.state.count} id='count' type='number' onChange={this.handleChange} />
+              Name
+              <input name='name' step={1} value={this.state.name} id='count' type='text' onChange={this.handleChange} />
+              Behavior
+              <select name='rating' value={this.state.rating} onChange={this.handleChange}>
+                <option value='0'>Select</option>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+              </select>
+              <input type='submit' onClick={this.handleClick} />
             </Col>
-            <Col>
+            <Col xl={1}>
               <Button onClick={this.handleClick}id='clearCount'>Clear</Button>
             </Col>
           </Row>

@@ -12,3 +12,23 @@
 #classroom-layout {
   border: 2px solid black;
 }
+
+#desk {
+  border: 1px solid black;
+}
+
+.one {
+  color: red
+}
+.two {
+  color: orange
+}
+.three {
+  color: gold
+}
+.four {
+  color: lightgreen
+}
+.five {
+  color: darkgreen
+}
