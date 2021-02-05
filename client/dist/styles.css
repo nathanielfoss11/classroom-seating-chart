@@ -11,24 +11,31 @@
 /* Classroom Layout */
 #classroom-layout {
   border: 2px solid black;
+  height: 600px;
+  width: 100%;
 }
 
-#desk {
+/* #desk {
   border: 1px solid black;
-}
+} */
 
 .one {
-  color: red
+  color: red;
+  border: 2px solid red;
 }
 .two {
-  color: orange
+  color: orange;
+  border: 2px solid orange;
 }
 .three {
-  color: gold
+  color: gold;
+  border: 2px solid gold;
 }
 .four {
-  color: lightgreen
+  color: lightgreen;
+  border: 2px solid lightgreen;
 }
 .five {
-  color: darkgreen
+  color: darkgreen;
+  border: 2px solid darkgreen;
 }

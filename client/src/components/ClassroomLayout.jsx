@@ -40,22 +40,24 @@ class ClassroomLayout extends React.Component {
               <h3>Toolbar</h3>
             </Col>
             <Col>
-              Name
-              <input name='name' step={1} value={this.state.name} id='count' type='text' onChange={this.handleChange} />
-              Behavior
-              <select name='rating' value={this.state.rating} onChange={this.handleChange}>
-                <option value='0'>Select</option>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-              </select>
-              <input type='submit' onClick={this.handleClick} />
+              <Row>
+                <h3>Name</h3>
+                <input name='name' step={1} value={this.state.name} id='count' type='text' onChange={this.handleChange} />
+                <h3>Behavior</h3>
+                <select name='rating' value={this.state.rating} onChange={this.handleChange}>
+                  <option value='0'>Select</option>
+                  <option value='1'>1</option>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='4'>4</option>
+                  <option value='5'>5</option>
+                </select>
+                <input type='submit' onClick={this.handleClick} />
+              </Row>
             </Col>
-            <Col xl={1}>
+            {/* <Col xl={1}>
               <Button onClick={this.handleClick}id='clearCount'>Clear</Button>
-            </Col>
+            </Col> */}
           </Row>
           <Row id='classroom-layout'>
             {this.state.count}

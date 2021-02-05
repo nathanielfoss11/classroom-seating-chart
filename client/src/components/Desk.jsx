@@ -1,5 +1,5 @@
-import { BiRectangle } from 'react-icons/bi';
 import React from 'react';
+import Draggable from 'react-draggable';
 
 class Desk extends React.Component {
   constructor(props) {
@@ -14,18 +14,31 @@ class Desk extends React.Component {
     let color = '';
     let rating = this.state.rating;
     if(rating === '1') {
-      color = 'one'
+      color = 'one';
     } else if (rating === '2') {
-      color = 'two'
+      color = 'two';
     } else if (rating === '3') {
-      color = 'three'
+      color = 'three';
     } else if (rating === '4') {
-      color = 'four'
+      color = 'four';
     } else if (rating === '5') {
-      color = 'five'      
+      color = 'five';
     }
     return (
-    <h1 id='desk' className={color}>{this.state.name}</h1>
+      <Draggable
+      axis="x"
+      handle=".handle"
+      defaultPosition={{x: 0, y: 0}}
+      position={null}
+      grid={[25, 25]}
+      scale={1}
+      onStart={this.handleStart}
+      onDrag={this.handleDrag}
+      onStop={this.handleStop}>
+        <div>
+          <h1 id='desk' draggable="true" className={color}>{this.state.name}</h1>
+        </div>
+    </Draggable>
   )
   }
 }
