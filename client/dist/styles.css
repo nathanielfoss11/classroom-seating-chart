@@ -15,9 +15,22 @@
   width: 100%;
 }
 
-/* #desk {
-  border: 1px solid black;
-} */
+#desk {
+  width: 75px;
+  height: 50px;
+  align-items: center;
+  align-content: center;
+  vertical-align: middle;
+}
+
+#name {
+  text-align: center;
+  vertical-align: middle;
+  margin: 0px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
 
 .one {
   color: red;
@@ -26,16 +39,22 @@
 .two {
   color: orange;
   border: 2px solid orange;
+  align-content: center;
+  float: unset;
 }
 .three {
   color: gold;
   border: 2px solid gold;
+  align-content: center;
+  float: unset;
 }
 .four {
   color: lightgreen;
   border: 2px solid lightgreen;
+  align-content: center;
 }
 .five {
   color: darkgreen;
   border: 2px solid darkgreen;
+  align-content: center;
 }

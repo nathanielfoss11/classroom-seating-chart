@@ -35,8 +35,8 @@ class Desk extends React.Component {
       onStart={this.handleStart}
       onDrag={this.handleDrag}
       onStop={this.handleStop}>
-        <div>
-          <h1 id='desk' draggable="true" className={color}>{this.state.name}</h1>
+        <div id='desk' className={color}>
+          <p id='name' draggable="true">{this.state.name}</p>
         </div>
     </Draggable>
   )
