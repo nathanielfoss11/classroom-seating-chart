@@ -5,11 +5,20 @@ class Desk extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      activeDrags: 0,
       name: props.desk.name,
       rating: props.desk.rating
     }
+    this.onStart = this.onStart.bind(this);
+    this.onStop = this.onStop.bind(this);
   }
-  
+
+  onStart() {
+    this.setState({activeDrage: ++this.state.activeDrags})
+  }
+  onStop() {
+    this.setState({activeDrage: --this.state.activeDrags})
+  }
   render() {
     let color = '';
     let rating = this.state.rating;
@@ -23,20 +32,15 @@ class Desk extends React.Component {
       color = 'four';
     } else if (rating === '5') {
       color = 'five';
+    } else if (rating === '6') {
+      color = 'six';
     }
     return (
       <Draggable
-      axis="x"
-      handle=".handle"
-      defaultPosition={{x: 0, y: 0}}
-      position={null}
-      grid={[25, 25]}
-      scale={1}
-      onStart={this.handleStart}
-      onDrag={this.handleDrag}
-      onStop={this.handleStop}>
+      onStart={this.onStart}
+      onStop={this.onStop}>
         <div id='desk' className={color}>
-          <p id='name' draggable="true">{this.state.name}</p>
+          {this.state.name}
         </div>
     </Draggable>
   )

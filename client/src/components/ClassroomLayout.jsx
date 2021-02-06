@@ -6,7 +6,7 @@ class ClassroomLayout extends React.Component {
   constructor() {
     super();
     this.state = {
-      desks: [],
+      desks: [{name: 'Your Desk', rating: '6'}],
       name: '',
       rating: 0
     }
@@ -60,7 +60,6 @@ class ClassroomLayout extends React.Component {
             </Col> */}
           </Row>
           <Row id='classroom-layout'>
-            {this.state.count}
             <AllDesks desks={this.state.desks}/>
           </Row>
 
