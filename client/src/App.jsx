@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import ClassroomLayout from './components/ClassroomLayout.jsx';
+import Login from './components/Login.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -20,7 +20,7 @@ class App extends React.Component {
             <br />
             <br />
             <Row>
-              <ClassroomLayout />
+              <Login />
             </Row>
           </Col>
         </Container>

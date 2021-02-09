@@ -55,9 +55,6 @@ class ClassroomLayout extends React.Component {
                 <input type='submit' onClick={this.handleClick} />
               </Row>
             </Col>
-            {/* <Col xl={1}>
-              <Button onClick={this.handleClick}id='clearCount'>Clear</Button>
-            </Col> */}
           </Row>
           <Row id='classroom-layout'>
             <AllDesks desks={this.state.desks}/>
