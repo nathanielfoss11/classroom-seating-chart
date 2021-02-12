@@ -3,13 +3,9 @@ import React from 'react';
 
 const AllDesks = (props) => {
   if(props.desks.length > 0) {
-    return React.createElement(
-      'div', 
-      null, 
-      props.desks.map(desk => 
-        <Desk desk={desk} />,
+    return props.desks.map(desk => 
+        <Desk handleDelete={props.handleDelete} desk={desk} />,
       )
-    )
   } else {
     console.log('null')
     return null;

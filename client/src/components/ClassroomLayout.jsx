@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import AllDesks from './AllDesks.jsx';
+import ReactDOM from 'react-dom';
 
 class ClassroomLayout extends React.Component {
   constructor() {
@@ -12,11 +13,25 @@ class ClassroomLayout extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleChange(e) {
     let name = e.target.name
     this.setState({[name]: e.target.value})
+  }
+
+  handleDelete(name) {
+    console.log(name)
+    let desks = this.state.desks
+    for(let i = 0; i < desks.length; i++) {
+      console.log(desks[i]['name'])
+      if(desks[i]['name'] === name) {
+        desks.splice(i, 1);
+        this.setState({desks: desks});
+        break;
+      }
+    }
   }
 
   handleClick(e) {
@@ -57,7 +72,7 @@ class ClassroomLayout extends React.Component {
             </Col>
           </Row>
           <Row id='classroom-layout'>
-            <AllDesks desks={this.state.desks}/>
+            <AllDesks handleDelete={this.handleDelete = this.handleDelete.bind(this)}desks={this.state.desks}/>
           </Row>
 
         </Container>

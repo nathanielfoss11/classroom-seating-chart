@@ -1,5 +1,6 @@
 import React from 'react';
 import Draggable from 'react-draggable';
+import ReactDOM from 'react-dom'
 
 class Desk extends React.Component {
   constructor(props) {
@@ -11,6 +12,12 @@ class Desk extends React.Component {
     }
     this.onStart = this.onStart.bind(this);
     this.onStop = this.onStop.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = props.handleDelete.bind(this);
+  }
+
+  handleClick() {
+    this.handleDelete(this.state.name)
   }
 
   onStart() {
@@ -36,13 +43,16 @@ class Desk extends React.Component {
       color = 'six';
     }
     return (
-      <Draggable
-      onStart={this.onStart}
-      onStop={this.onStop}>
-        <div id='desk' className={color}>
-          {this.state.name}
-        </div>
-    </Draggable>
+      <div id={this.state.name}>
+        <p onClick={this.handleClick}>x</p>
+        <Draggable
+        onStart={this.onStart}
+        onStop={this.onStop}>
+          <div id='desk' className={color}>
+            {this.state.name}
+          </div>
+        </Draggable>
+      </div>
   )
   }
 }
