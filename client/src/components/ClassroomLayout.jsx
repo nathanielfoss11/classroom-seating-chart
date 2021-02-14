@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import AllDesks from './AllDesks.jsx';
+import ClassList from './ClassList.jsx';
 import ReactDOM from 'react-dom';
 
 class ClassroomLayout extends React.Component {
@@ -23,12 +24,13 @@ class ClassroomLayout extends React.Component {
 
   handleDelete(name) {
     console.log(name)
-    let desks = this.state.desks
-    for(let i = 0; i < desks.length; i++) {
-      console.log(desks[i]['name'])
-      if(desks[i]['name'] === name) {
-        desks.splice(i, 1);
-        this.setState({desks: desks});
+    let newDesks = this.state.desks
+    for(let i = 0; i < newDesks.length; i++) {
+      console.log(newDesks[i]['name'])
+      if(newDesks[i]['name'] === name) {
+        newDesks.splice(i, 1);
+        console.log(newDesks)
+        this.setState({desks: newDesks});
         break;
       }
     }
@@ -50,31 +52,42 @@ class ClassroomLayout extends React.Component {
   render() {
     return (
         <Container>
-          <Row fluid>
-            <Col>
-              <h3>Toolbar</h3>
-            </Col>
-            <Col>
+          <Row>
+            <Col xl={3}>
               <Row>
-                <h3>Name</h3>
-                <input name='name' step={1} value={this.state.name} id='count' type='text' onChange={this.handleChange} />
-                <h3>Behavior</h3>
-                <select name='rating' value={this.state.rating} onChange={this.handleChange}>
-                  <option value='0'>Select</option>
-                  <option value='1'>1</option>
-                  <option value='2'>2</option>
-                  <option value='3'>3</option>
-                  <option value='4'>4</option>
-                  <option value='5'>5</option>
-                </select>
-                <input type='submit' onClick={this.handleClick} />
+                <h3>Class List</h3>
+              </Row>
+              <Row>
+                <ClassList classArray={this.state.desks} />
+              </Row>
+            </Col>
+            <Col fluid>
+              <Row>
+                <Col>
+                  <h3>Toolbar</h3>
+                </Col>
+                <Col>
+                  <Row>
+                    <h3>Name</h3>
+                    <input name='name' step={1} value={this.state.name} id='count' type='text' onChange={this.handleChange} />
+                    <h3>Behavior</h3>
+                    <select name='rating' value={this.state.rating} onChange={this.handleChange}>
+                      <option value='0'>Select</option>
+                      <option value='1'>1</option>
+                      <option value='2'>2</option>
+                      <option value='3'>3</option>
+                      <option value='4'>4</option>
+                      <option value='5'>5</option>
+                    </select>
+                    <input type='submit' onClick={this.handleClick} />
+                  </Row>
+                </Col>
+              </Row>
+              <Row id='classroom-layout'>
+                <AllDesks handleDelete={this.handleDelete = this.handleDelete.bind(this)}desks={this.state.desks}/>
               </Row>
             </Col>
           </Row>
-          <Row id='classroom-layout'>
-            <AllDesks handleDelete={this.handleDelete = this.handleDelete.bind(this)}desks={this.state.desks}/>
-          </Row>
-
         </Container>
     );
   }

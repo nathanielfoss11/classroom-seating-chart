@@ -20,6 +20,7 @@
   "homepage": "https://github.com/nathanielfoss11/classroom-seating-chart#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "jquery": "^3.5.1",
     "mongodb": "^3.6.4",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
