@@ -44,7 +44,6 @@ class Desk extends React.Component {
     }
     return (
       <div id={this.state.name}>
-        <p onClick={this.handleClick}>x</p>
         <Draggable
         onStart={this.onStart}
         onStop={this.onStop}>
