@@ -53,18 +53,7 @@ class ClassroomLayout extends React.Component {
     return (
         <Container>
           <Row>
-            <Col xl={3}>
-              <Row>
-                <h3>Class List</h3>
-              </Row>
-              <Row>
-                <Col>
-                  <ClassList classArray={this.state.desks} handleDelete={
-    this.handleDelete = this.handleDelete.bind(this)}/>            
-                </Col>
-              </Row>
-            </Col>
-            <Col fluid>
+            <Col>
               <Row>
                 <Col xs={2}>
                   <h3>Toolbar</h3>
@@ -88,6 +77,17 @@ class ClassroomLayout extends React.Component {
               </Row>
               <Row id='classroom-layout'>
                 <AllDesks desks={this.state.desks}/>
+              </Row>
+            </Col>
+            <Col xl={3}>
+              <Row>
+                <h3>Class List</h3>
+              </Row>
+              <Row>
+                <Col>
+                  <ClassList classArray={this.state.desks} handleDelete={
+    this.handleDelete = this.handleDelete.bind(this)}/>            
+                </Col>
               </Row>
             </Col>
           </Row>
