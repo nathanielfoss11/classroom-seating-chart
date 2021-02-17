@@ -12,12 +12,6 @@ class Desk extends React.Component {
     }
     this.onStart = this.onStart.bind(this);
     this.onStop = this.onStop.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleDelete = props.handleDelete.bind(this);
-  }
-
-  handleClick() {
-    this.handleDelete(this.state.name)
   }
 
   onStart() {

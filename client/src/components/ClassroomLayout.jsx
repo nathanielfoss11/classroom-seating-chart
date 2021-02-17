@@ -58,12 +58,15 @@ class ClassroomLayout extends React.Component {
                 <h3>Class List</h3>
               </Row>
               <Row>
-                <ClassList classArray={this.state.desks} />
+                <Col>
+                  <ClassList classArray={this.state.desks} handleDelete={
+    this.handleDelete = this.handleDelete.bind(this)}/>            
+                </Col>
               </Row>
             </Col>
             <Col fluid>
               <Row>
-                <Col>
+                <Col xs={2}>
                   <h3>Toolbar</h3>
                 </Col>
                 <Col>
@@ -84,7 +87,7 @@ class ClassroomLayout extends React.Component {
                 </Col>
               </Row>
               <Row id='classroom-layout'>
-                <AllDesks handleDelete={this.handleDelete = this.handleDelete.bind(this)}desks={this.state.desks}/>
+                <AllDesks desks={this.state.desks}/>
               </Row>
             </Col>
           </Row>
