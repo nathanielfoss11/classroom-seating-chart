@@ -18,13 +18,13 @@ class Name extends React.Component {
   
   render() {
     return(
-      <Col>
+      <Col id='className'>
         <Row>
           <Col>
             <h5>{this.state.name}</h5> 
           </Col>
           <Col>
-            <Button size='sm' onClick={this.handleClick}>Delete</Button>      
+            <Button id='delete' size='sm' onClick={this.handleClick}>Delete</Button>      
           </Col>
         </Row>
       </Col>

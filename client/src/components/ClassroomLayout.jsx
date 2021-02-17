@@ -55,15 +55,21 @@ class ClassroomLayout extends React.Component {
           <Row>
             <Col>
               <Row>
-                <Col xs={2}>
-                  <h3>Toolbar</h3>
+                <Col xs={3}>
+                  <h3>Add Students:</h3>
                 </Col>
                 <Col>
-                  <Row>
-                    <h3>Name</h3>
-                    <input name='name' step={1} value={this.state.name} id='count' type='text' onChange={this.handleChange} />
-                    <h3>Behavior</h3>
-                    <select name='rating' value={this.state.rating} onChange={this.handleChange}>
+                  <Row id='toolbar'>
+                    <Col>
+                    <Row id='nameRow'>
+                    <h4>Name &nbsp;</h4>
+                    <input name='name' step={1} value={this.state.name} id='count' type='text' onChange={this.handleChange} />                   
+                    </Row>
+                    </Col>
+                    <Col>
+                    <Row>
+                    <h4>Behavior &nbsp;</h4>
+                    <select name='rating' id='rating' value={this.state.rating} onChange={this.handleChange}>
                       <option value='0'>Select</option>
                       <option value='1'>1</option>
                       <option value='2'>2</option>
@@ -71,7 +77,10 @@ class ClassroomLayout extends React.Component {
                       <option value='4'>4</option>
                       <option value='5'>5</option>
                     </select>
-                    <input type='submit' onClick={this.handleClick} />
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <input type='submit' id='rating' onClick={this.handleClick} />
+                    </Row>
+                    </Col>
                   </Row>
                 </Col>
               </Row>
