@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3002;
 
 app.use(express.static('../client/dist'));
 app.use(express.json());
@@ -9,6 +9,6 @@ app.use(express.json());
 // 		res.status(200).send('The server is taking requests from something');
 // });
 
-app.listen(PORT, () => {
-    console.log('Serving up now at '+ JSON.stringify(PORT))
+app.listen(port, () => {
+    console.log('Serving up now at '+ JSON.stringify(port))
 });
